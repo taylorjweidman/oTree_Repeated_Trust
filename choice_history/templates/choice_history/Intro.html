@@ -1,0 +1,13 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+
+  {% include 'choice_history/Instructions.html' %}
+
+  {% next_button %}
+{% endblock %}
