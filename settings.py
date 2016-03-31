@@ -116,6 +116,13 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
+        'name': 'IRB_Instructions',
+        'display_name': "IRB + Instructions",
+        'num_demo_participants': 2,
+        'num_participants': 2,
+        'app_sequence': ['IRB_Instructions'],
+    },
+    {
         'name': 'choice_history',
         'display_name': "Choice History",
         'num_demo_participants': 2,
