@@ -13,6 +13,6 @@ class Instructions(Page):
     timeout_seconds = 200
 
 page_sequence = [
-#    IRB,
-#    Instructions
+    IRB,
+    Instructions
 ]
