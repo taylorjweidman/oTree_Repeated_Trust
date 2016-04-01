@@ -117,16 +117,37 @@ SESSION_CONFIGS = [
     {
         'name': 'IRB_Instructions',
         'display_name': "IRB + Instructions",
-        'num_demo_participants': 2,
-        'num_participants': 2,
+        'num_demo_participants': 1,
+        'num_participants': 1,
         'app_sequence': ['IRB_Instructions'],
     },
     {
+        'name': 'Group_A',
+        'display_name': "Group_A",
+        'num_demo_participants': 2,
+        'num_participants': 2,
+        'app_sequence': ['Group_A'],
+    },
+    {
+        'name': 'Group_B',
+        'display_name': "Group_B",
+        'num_demo_participants': 2,
+        'num_participants': 2,
+        'app_sequence': ['Group_B'],
+    },
+    {
         'name': 'Group_C',
-        'display_name': "Choice History",
+        'display_name': "Group_C",
         'num_demo_participants': 2,
         'num_participants': 2,
         'app_sequence': ['Group_C'],
+    },
+    {
+        'name': 'Group_D',
+        'display_name': "Group_D",
+        'num_demo_participants': 2,
+        'num_participants': 2,
+        'app_sequence': ['Group_D'],
     },
 ]
 
