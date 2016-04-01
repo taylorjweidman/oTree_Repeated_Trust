@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dba8aeb5-a942-4105-877f-3a878907f264" name="Default" comment="" />
-    <ignored path="choice_history.iws" />
+    <ignored path="Group_C.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +17,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="choice_history" />
+    <favorites_list name="Group_C" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="2123" />
@@ -56,7 +56,7 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="choice_history" />
+              <option name="myItemId" value="Group_C" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
