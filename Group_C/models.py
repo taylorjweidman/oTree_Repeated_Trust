@@ -10,7 +10,7 @@ doc = """ Simple Choice History """
 
 
 class Constants(BaseConstants):
-    name_in_url = 'choice_history'
+    name_in_url = 'Group_C'
     players_per_group = 2
     num_rounds = 2
     distrust = c(2)

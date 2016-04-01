@@ -122,11 +122,11 @@ SESSION_CONFIGS = [
         'app_sequence': ['IRB_Instructions'],
     },
     {
-        'name': 'choice_history',
+        'name': 'Group_C',
         'display_name': "Choice History",
         'num_demo_participants': 2,
         'num_participants': 2,
-        'app_sequence': ['choice_history'],
+        'app_sequence': ['Group_C'],
     },
 ]
 
