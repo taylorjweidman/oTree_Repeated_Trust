@@ -9,10 +9,10 @@ class IRB(Page):
     form_model = models.Player
     form_fields = ['IRB_accept']
 
-class Intro(Page):
+class Instructions(Page):
     timeout_seconds = 200
 
 page_sequence = [
     IRB,
-    Intro
+    Instructions
 ]
