@@ -3,36 +3,31 @@
 <div class="box effect7">
 
 <p>
-    This study will last for a randomly selected number of rounds. We are 99.9% confident the study will continue no longer than 30 rounds or two hours.
-    At the beginning of the study you will be randomly assigned to the role of Person 1 or Person 2. You will maintain this role throughout the entire study.
-    Each round, you will be paired with one other randomly selected participant, called your pairing.
-    Each round, Person 1 will be given the choice between "R" and "S". If Person 1 chooses "S", Person 2 will be given the choice between "U" and "V".
-    Based on the decisions of you and your pairing, you will receive the following payoffs from the tree below.
-    Person 1's payoffs are on the top, and Person 2's payoffs are on the bottom.
-    Payoff values are represented by points, and will be converted to dollars at the end of the study.
+    This study will last for a randomly selected number of rounds. We are 99.9% confident the study will continue no longer than 30 rounds or two hours. At the beginning of the study you will be randomly assigned to the role of Person 1 or Person 2. You will maintain this role throughout the entire study. Each round, you will be paired with one other randomly selected participant, called your pairing. Each round, Person 1 will be given the choice between “R” and “S”. If Person 1 chooses “S”, Person 2 will be given the choice between “U” and “V”. Based on your decisions and your pairing’s decisions, you will receive the following payoffs from the tree below. Person 1’s payoffs are on the top, and Person 2’s payoffs are on the bottom. Payoff values are represented by points, and will be converted to dollars at the end of the study.
 </p>
 <p>
-    <img src="https://raw.githubusercontent.com/taylorjweidman/otree-taylorjweidman/master/choice_history/templates/choice_history/GAME_TREE.png" alt="GAME TREE" width="100%" height="100%" />
+    <img src="https://raw.githubusercontent.com/taylorjweidman/otreetjw/master/group_c/templates/group_c/GAME_TREE.png" alt="GAME TREE" width="100%" height="100%" />
 </p>
 <p>
-    Every round you will be presented with a screen containing the following: your role as Person 1 or Person 2 (which does not change), the current round, and the decision tree.
-    Feel free to refer to the instructions when playing.
-    At the end of each round you will be presented with a payoff screen, displaying your final payoff.
-
-    When the study ends, you will receive the total of all your payoffs, which is displayed on your screen.
-    All choices are confidential and anonymous. No one will know who you are, who your pairings are, or what choices you made in the study, including the researchers.
+    Each round you will be presented with a screen containing the following: your role as Person 1 and Person 2 (which does not change), the current round, and the decision tree, your choice history, and your pairing’s choice history. Feel free to refer to the instructions during the study. At the end of each round you will be presented with a payoff screen, displaying your final payoff and your choice history.
 </p>
 <p>
-    Upon conclusion of the study, you will be presented with a unique Mechanical Turk code.
-    Submit this code in Mechanical Turk to receive compensation.
-    No one will be able to trace your behavior in the study back to you.
+    This choice history is designed to tell you and your pairing what choices each other had made in previous periods. The choice history keeps track of how many R’s and S’s Person 1 has chosen, and how many U’s and V’s Person 2 has chosen. The following table is a hypothetical scenario.
 </p>
 <p>
-    To start, participant A receives {{ Constants.endowment }};
-    participant B receives nothing.
-    Participant A can send some or all of his {{ Constants.endowment }} to participant B.
-    Before B receives these points they will be tripled.
-    Once B receives the tripled points he can decide to send some or all of his points to A.
+    This is an example Choice History Table.
+</p>
+<p>
+    Initially, both Person 1 and Person 2 start with a choice history of (0,0). In round 1, Person 1 chooses S and Person 2 chooses V. At the end of round 1 Person 1’s score is (0,1), since Person 1 has chosen R zero times and chosen S one time. Person 2’s score is (0,1), since Person 2 has chosen U zero times and chosen V one time. At the end of period 4 we can see that Person 1 has chosen R one time and chosen S three times, while Person 2 has chosen U one time and chosen V two times. The choice history continues for all rounds in the study. This information can be used to inform your choices in the study.
+</p>
+<p>
+    When the study ends, you will receive the total of all your payoffs, which is displayed on your screen. All choices are confidential and anonymous. No one will know who you are or what choices you made in the game, including the researchers.
+</p>
+<p>
+    [LAB-BASED STUDIES] Upon conclusion of the study, the payer will compile all participant payoffs in envelopes in a second room, labeling each with the ID number of the participant receiving the payoff. The payer will deliver the box to a secure location, where the researcher will collect it and return to the computer lab. The researcher and payer will not meet or communicate during the study. Upon departure, show the researcher their ID number to receive an envelope containing your payoff amount. The researcher will not know your payoff and will immediately insert your ID number directly into a shredder. No one will be able to trace your behavior in the study back to you. You will be free to leave.
+</p>
+<p>
+    [MTURK-BASED STUDIES] Upon conclusion of the study, you will be presented with a unique Mechanical Turk code. Submit this code in Mechanical Turk to receive compensation. No one will be able to trace your behavior in the study back to you.
 </p>
 
 </div>
