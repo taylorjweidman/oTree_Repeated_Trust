@@ -6,11 +6,11 @@ from otree.constants import BaseConstants
 from otree.db import models
 from otree.models import BaseSubsession, BaseGroup, BasePlayer
 
-doc = """ Group C """
+doc = """ Group B """
 
 
 class Constants(BaseConstants):
-    name_in_url = 'Group_C'
+    name_in_url = 'Group_B'
     players_per_group = 2
     num_rounds = 2
     distrust = c(2)
