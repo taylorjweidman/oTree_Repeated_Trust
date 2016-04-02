@@ -8,28 +8,6 @@ def before_session_starts(self):
     for p in self.get_players():
         p.payoff = 0
 
-class ShuffleWaitPage(WaitPage):
-    def is_displayed(self):
-        return self.subsession.round_number > 1
-
-    def after_all_players_arrive(self):
-
-        # sort players by 'score'
-        # see python docs on sorted() function
-        sorted_players = sorted(
-            self.subsession.get_players(),
-            key=lambda player: player.participant.vars['score']
-        )
-
-        # chunk players into groups
-        group_matrix = []
-        ppg = Constants.players_per_group
-        for i in range(0, len(sorted_players), ppg):
-            group_matrix.append(sorted_players[i:i+ppg])
-
-        # set new group
-        self.subsession.set_groups(group_matrix)
-
 class Pre_Round_Page(WaitPage):
     def after_all_players_arrive(self):
         p1 = self.group.get_player_by_role('Person 1')
@@ -40,7 +18,7 @@ class Pre_Round_Page(WaitPage):
 class First_Choice(Page):
     form_model = models.Player
     form_fields = ['own_choice']
-    timeout_seconds = 100
+    timeout_seconds = 20
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -54,10 +32,15 @@ class WaitForP1(WaitPage):
         p1 = self.group.get_player_by_role('Person 1')
         self.group.group_choice = p1.own_choice
 
+    def timeout(self):
+        if self.timeout_happened:
+            p1 = self.group.get_player_by_role('Person 1')
+            p1.own_choice = 'S'
+
 class Second_Choice(Page):
     form_model = models.Player
     form_fields = ['own_choice']
-    timeout_seconds = 100
+    timeout_seconds = 20
 
     def is_displayed(self):
         return self.player.id_in_group == 2 and self.group.group_choice == "S"
@@ -66,6 +49,16 @@ class Second_Choice(Page):
         player_in_all_rounds = self.player.in_all_rounds()
         return {'player_in_all_rounds': player_in_all_rounds}
 
+class WaitForP2(WaitPage):
+    def after_all_players_arrive(self):
+        p2 = self.group.get_player_by_role('Person 2')
+        self.group.group_choice = p2.own_choice
+
+    def timeout(self):
+        if self.timeout_happened:
+            p2 = self.group.get_player_by_role('Person 2')
+            p2.own_choice = 'V'
+
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
         p1 = self.group.get_player_by_role('Person 1')
@@ -73,7 +66,7 @@ class ResultsWaitPage(WaitPage):
         self.group.set_variables()
 
 class Results(Page):
-    timeout_seconds = 100
+    timeout_seconds = 20
 
 class ResultsSummary(Page):
     def is_displayed(self):

@@ -7,18 +7,26 @@
 
 {% block content %}
 
-    <table class="table" style="width:400px; margin-top:20px; margin-bottom:10px">
+    <table align="center" class="table text-center" style="width:300px; margin-top:20px; margin-bottom:10px">
         <tr>
-            <td> You chose <td/>
+            <td> Your role is </td>
+            <td> {{player.role}} </td>
+        </tr>
+        <tr>
+            <td> You chose </td>
             <td> {{player.own_choice}} </td>
         <tr/>
         <tr>
-            <td> Your pairing chose <td/>
+            <td> Your pairing chose </td>
             <td> {{player.other_choice}} </td>
         </tr>
         <tr>
             <td> As a result, you earned </td>
             <td> {{ player.payoff }} </td>
+        </tr>
+        <tr>
+            <td> Your pairing earned </td>
+            <td> {{ player.other_payoff }} </td>
         </tr>
         <tr>
             <td> Your total payoff is </td>

@@ -7,13 +7,17 @@
 
 {% block content %}
 
-    <table class="table" style="width:400px; margin-top:20px; margin-bottom:10px">
+    <table align="center" class="table text-center" style="width:300px; margin-top:20px; margin-bottom:10px">
         <tr>
-            <td> You chose <td/>
+            <td> Your role is </td>
+            <td> {{player.role}} </td>
+        </tr>
+        <tr>
+            <td> You chose </td>
             <td> {{player.own_choice}} </td>
         <tr/>
         <tr>
-            <td> Your pairing chose <td/>
+            <td> Your pairing chose </td>
             <td> {{player.other_choice}} </td>
         </tr>
         <tr>
@@ -21,9 +25,39 @@
             <td> {{ player.payoff }} </td>
         </tr>
         <tr>
+            <td> Your pairing earned </td>
+            <td> {{ player.other_payoff }} </td>
+        </tr>
+        <tr>
             <td> Your total payoff is </td>
             <td> {{ player.total_payoff }} </td>
         </tr>
+    </table>
+
+    <table class="table table-bordered text-center" style="width: auto; margin: auto">
+        <tr>
+            <th colspan="5"><b><center> CHOICE HISTORY </center></b></th>
+        </tr>
+        <tr>
+            <th rowspan="2"><span class="rotate90">Round</span></th>
+            <th colspan="2">Person 1 (You)</th>
+            <th colspan="2">Person 2 (Pairing)</th>
+        </tr>
+        <tr class="highlight-row-on-hover">
+            <td>Choice</td>
+            <td>(R,S)</td>
+            <td>Choice</td>
+            <td>(U,V)</td>
+        </tr>
+        {% for p in player_in_all_rounds %}
+            <tr class="highlight-row-on-hover">
+                <td>{{p.subsession.round_number}}</td>
+                <td>{{p.own_choice}}</td>
+                <td>{{p.own_score}}</td>
+                <td>{{p.other_choice}}</td>
+                <td>{{p.other_score}}</td>
+            </tr>
+        {% endfor %}
     </table>
 
 {% next_button %}

@@ -43,6 +43,8 @@ class Group(BaseGroup):
             p2.RU = p2.SV = 0
             p2.payoff = Constants.distrust
             p2.own_choice = "NA"
+            p1.other_payoff = p2.payoff
+            p2.other_payoff = p1.payoff
         else:
             p1.RU = 0
             p1.SV = 1
@@ -52,11 +54,15 @@ class Group(BaseGroup):
                 p2.SV = 0
                 p2.payoff = Constants.defect
                 self.group_choice = "U"
+                p1.other_payoff = p2.payoff
+                p2.other_payoff = p1.payoff
             else:
                 p1.payoff = Constants.trust
                 p2.RU = 0
                 p2.SV = 1
                 p2.payoff = Constants.trust
+                p1.other_payoff = p2.payoff
+                p2.other_payoff = p1.payoff
         self.group_choice = "V"
         p1.other_choice = p2.own_choice
         p2.other_choice = p1.own_choice
@@ -75,6 +81,7 @@ class Player(BasePlayer):
 
     IRB_accept = models.CharField()
     player_id = models.CharField()
+    other_payoff = models.CurrencyField()
     total_payoff = models.CurrencyField()
 
     own_choice = models.CharField(
