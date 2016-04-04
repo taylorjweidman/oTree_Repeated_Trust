@@ -27,15 +27,15 @@ class First_Choice(Page):
         player_in_all_rounds = self.player.in_all_rounds()
         return {'player_in_all_rounds': player_in_all_rounds}
 
+    def before_next_page(self):
+        if self.timeout_happened:
+            p1 = self.group.get_player_by_role('Person 1')
+            p1.own_choice = 'S'
+
 class WaitForP1(WaitPage):
     def after_all_players_arrive(self):
         p1 = self.group.get_player_by_role('Person 1')
         self.group.group_choice = p1.own_choice
-
-    def timeout(self):
-        if self.timeout_happened:
-            p1 = self.group.get_player_by_role('Person 1')
-            p1.own_choice = 'S'
 
 class Second_Choice(Page):
     form_model = models.Player
@@ -49,15 +49,15 @@ class Second_Choice(Page):
         player_in_all_rounds = self.player.in_all_rounds()
         return {'player_in_all_rounds': player_in_all_rounds}
 
+    def before_next_page(self):
+        if self.timeout_happened:
+            p2 = self.group.get_player_by_role('Person 2')
+            p2.own_choice = 'V'
+
 class WaitForP2(WaitPage):
     def after_all_players_arrive(self):
         p2 = self.group.get_player_by_role('Person 2')
         self.group.group_choice = p2.own_choice
-
-    def timeout(self):
-        if self.timeout_happened:
-            p2 = self.group.get_player_by_role('Person 2')
-            p2.own_choice = 'V'
 
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):

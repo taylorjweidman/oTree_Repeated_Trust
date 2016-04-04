@@ -5,6 +5,7 @@ from otree.common import Currency as c
 from otree.constants import BaseConstants
 from otree.db import models
 from otree.models import BaseSubsession, BaseGroup, BasePlayer
+import random
 
 doc = """ Group C """
 
@@ -12,7 +13,7 @@ doc = """ Group C """
 class Constants(BaseConstants):
     name_in_url = 'Group_C'
     players_per_group = 2
-    num_rounds = 2
+    num_rounds = 15
     distrust = c(2)
     defect = c(6)
     defected = c(0)
@@ -22,12 +23,26 @@ class Constants(BaseConstants):
     first_choice = 0
 
 class Subsession(BaseSubsession):
+    def is_displayed(self):
+        return self.round_number > 1
+
     def before_session_starts(self):
-        if self.round_number % 2 == 0:
-            for group in self.get_groups():
-                players = group.get_players()
-                players.reverse()
-                group.set_players(players)
+        players = self.get_players()
+        random.shuffle(players)
+
+        players_1 = [p for p in players if p.id_in_group == 1]
+        players_2 = [p for p in players if p.id_in_group == 2]
+
+        group_matrix = []
+        num_groups = int(len(players) / 2)
+
+        for i in range(num_groups):
+            new_group = [
+                players_1.pop(),
+                players_2.pop(),
+            ]
+            group_matrix.append(new_group)
+        self.set_groups(group_matrix)
 
 class Group(BaseGroup):
     group_choice = models.CharField()
@@ -79,8 +94,6 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
 
-    IRB_accept = models.CharField()
-    player_id = models.CharField()
     other_payoff = models.CurrencyField()
     total_payoff = models.CurrencyField()
 
@@ -96,6 +109,7 @@ class Player(BasePlayer):
     total_SV = models.IntegerField()
     own_score = models.CharField()
     other_score = models.CharField()
+    choice_time = models.IntegerField() #in seconds
 
     def role(self):
         if self.id_in_group == 1:

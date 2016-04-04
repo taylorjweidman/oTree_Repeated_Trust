@@ -7,34 +7,35 @@
 
 {% block content %}
 
-    <table align="center" class="table text-center" style="width:300px; margin-top:20px; margin-bottom:10px">
+    <table align="center" class="table table-bordered text-center" style="width:300px; margin-top:20px; margin-bottom:10px">
+        <tr><td colspan="3" align="center"><b>RESULTS INFORMATION</b></td></tr>
         <tr>
-            <td> Your role is </td>
-            <td> {{player.role}} </td>
+            <td align="left"> Your role </td>
+            <td align="left"> {{player.role}} </td>
         </tr>
         <tr>
-            <td> You chose </td>
-            <td> {{player.own_choice}} </td>
+            <td align="left"> You chose </td>
+            <td align="left"> {{player.own_choice}} </td>
         <tr/>
         <tr>
-            <td> Your pairing chose </td>
-            <td> {{player.other_choice}} </td>
+            <td align="left"> Your pairing chose </td>
+            <td align="left"> {{player.other_choice}} </td>
         </tr>
         <tr>
-            <td> As a result, you earned </td>
-            <td> {{ player.payoff }} </td>
+            <td align="left"> As a result, you earned </td>
+            <td align="left"> {{ player.payoff }} </td>
         </tr>
         <tr>
-            <td> Your pairing earned </td>
-            <td> {{ player.other_payoff }} </td>
+            <td align="left"> Your pairing earned </td>
+            <td align="left"> {{ player.other_payoff }} </td>
         </tr>
         <tr>
-            <td> Your total payoff is </td>
-            <td> {{ player.total_payoff }} </td>
+            <td align="left"> Your total payoff </td>
+            <td align="left"> {{ player.total_payoff }} </td>
         </tr>
     </table>
 
-    <table class="table table-bordered text-center" style="width: auto; margin: auto">
+    <table align="center" class="table table-bordered text-center" style="width:400px; margin-top:20px; margin-bottom:10px">
         <tr>
             <th colspan="5"><b><center> CHOICE HISTORY </center></b></th>
         </tr>
