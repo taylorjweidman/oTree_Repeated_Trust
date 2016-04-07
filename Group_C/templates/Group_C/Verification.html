@@ -1,0 +1,20 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block content %}
+
+<div class="box effect7">
+
+<p><b>VERIFICATION</b></p>
+
+<p>
+    Please provide the email address with which you provided to be contacted about this study.
+    It is used only to verify you are part of the recruitment pool and to bonus your account.
+    This and any other identifying information in the study will be deleted from our records.
+</p>
+    {% formfield player.verification %}
+    {% next_button %}
+
+</div>
+
+{% endblock %}

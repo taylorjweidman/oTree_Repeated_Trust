@@ -5,6 +5,13 @@ from . import models
 from .models import Constants
 import random
 
+class Verification(Page):
+    form_model = models.Player
+    form_fields = ['verification']
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
 class Pre_Round_Page(WaitPage):
     def after_all_players_arrive(self):
         p1 = self.group.get_player_by_role('Person 1')
@@ -82,6 +89,7 @@ class ResultsSummary(Page):
         return self.subsession.round_number == Constants.num_rounds
 
 page_sequence = [
+    Verification,
     Pre_Round_Page,
     First_Choice,
     WaitForP1,

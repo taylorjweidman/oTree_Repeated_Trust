@@ -6,6 +6,7 @@ from otree.constants import BaseConstants
 from otree.db import models
 from otree.models import BaseSubsession, BaseGroup, BasePlayer
 import random
+from django_countries.fields import CountryField
 
 doc = """ Group C """
 
@@ -124,6 +125,8 @@ class Player(BasePlayer):
     #CHOICE VARIABLES
     own_choice = models.CharField()
     other_choice = models.CharField()
+    verification = models.CharField()
+
     RU = models.IntegerField()
     SV = models.IntegerField()
     total_RU = models.IntegerField()
