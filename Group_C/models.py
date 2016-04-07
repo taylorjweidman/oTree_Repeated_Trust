@@ -47,6 +47,7 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     group_choice = models.CharField()
 
+    #DECISION OUTCOME VARIABLES
     def set_variables(self):
         p1 = self.get_player_by_role('Person 1')
         p2 = self.get_player_by_role('Person 2')
@@ -79,29 +80,49 @@ class Group(BaseGroup):
                 p1.other_payoff = p2.payoff
                 p2.other_payoff = p1.payoff
         self.group_choice = "V"
+
         p1.other_choice = p2.own_choice
         p2.other_choice = p1.own_choice
-        p1.total_payoff = sum([p.payoff for p in p1.in_all_rounds()])
-        p2.total_payoff = sum([p.payoff for p in p2.in_all_rounds()])
+
+        p1.scaled_points = p1.payoff
+        p2.scaled_points = p2.payoff - 1
+
+        p1.total_payoff = sum([p.scaled_points for p in p1.in_all_rounds()])
+        p2.total_payoff = sum([p.scaled_points for p in p2.in_all_rounds()])
+
         p1.total_RU = sum([p.RU for p in p1.in_all_rounds()])
         p1.total_SV = sum([p.SV for p in p1.in_all_rounds()])
         p2.total_RU = sum([p.RU for p in p2.in_all_rounds()])
         p2.total_SV = sum([p.SV for p in p2.in_all_rounds()])
+
         p1.own_score = '('+str(p1.total_RU)+','+str(p1.total_SV)+')'
         p2.own_score = '('+str(p2.total_RU)+','+str(p2.total_SV)+')'
+
         p1.other_score = p2.own_score
         p2.other_score = p1.own_score
 
+        p1.scaled_points = p1.payoff
+        p2.scaled_points = p2.payoff
+
+        #LIST MODELS
+        p1.choice_history = list([str(p.own_choice) for p in p1.in_all_rounds()])
+        p1.payoff_history = list([int(p.payoff) for p in p1.in_all_rounds()])
+        p1.score_history = list([str(p.own_score) for p in p1.in_all_rounds()])
+
+        p2.choice_history = list([str(p.own_choice) for p in p2.in_all_rounds()])
+        p2.payoff_history = list([int(p.payoff) for p in p2.in_all_rounds()])
+        p2.score_history = list([str(p.own_score) for p in p2.in_all_rounds()])
+
+        p1.pairing_choice_history = p2.choice_history
+        p1.pairing_score_history = p2.score_history
+
+        p2.pairing_choice_history = p1.choice_history
+        p2.pairing_score_history = p1.score_history
+
 class Player(BasePlayer):
 
-    other_payoff = models.CurrencyField()
-    total_payoff = models.CurrencyField()
-
-    own_choice = models.CharField(
-        choices=['R', 'S', 'U', 'V'],
-        doc="""Outcome of decision tree""",
-        widget=widgets.RadioSelect())
-
+    #CHOICE VARIABLES
+    own_choice = models.CharField()
     other_choice = models.CharField()
     RU = models.IntegerField()
     SV = models.IntegerField()
@@ -109,8 +130,25 @@ class Player(BasePlayer):
     total_SV = models.IntegerField()
     own_score = models.CharField()
     other_score = models.CharField()
-    choice_time = models.IntegerField() #in seconds
 
+    #POINTS AND PAYOFF VARIABLES
+    #payoff = a built-in variable
+    other_payoff = models.CurrencyField()
+    total_payoff = models.CurrencyField()
+    scaled_points = models.FloatField() #scaled points for equality between players
+
+    #TIME VARIABLE: did they run out of time?
+    choice_time = models.IntegerField() #yes = 1?
+
+    # LIST MODEL VARIABLES
+    choice_history = models.CommaSeparatedIntegerField(max_length=30)
+    score_history = models.CommaSeparatedIntegerField(max_length=30)
+    payoff_history = models.CommaSeparatedIntegerField(max_length=30)
+
+    pairing_choice_history = models.CommaSeparatedIntegerField(max_length=30)
+    pairing_score_history = models.CommaSeparatedIntegerField(max_length=30)
+
+    #DEFINES ROLE
     def role(self):
         if self.id_in_group == 1:
             return 'Person 1'

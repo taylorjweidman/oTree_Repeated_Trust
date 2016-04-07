@@ -17,26 +17,47 @@
         </table>
     </div>
 
-    <table class="table table-bordered text-center" style="width: auto; margin: auto">
+<table cellpadding="5" style="width: auto" align="center">
+    <tr>
+
+    <td valign="top"><table class="table table-bordered text-center" style="width: auto; margin: auto">
         <tr>
             <th rowspan="2"><span class="rotate90">Round</span></th>
-            <th colspan="2">Person 1 (Pairing)</th>
-            <th colspan="2">Person 2 (You)</th>
+            <th colspan="2"> Person 1 (Pairing) </th>
+        </tr>
+        <tr class="highlight-row-on-hover">
+            <td>Choice</td>
+            <td>(U,V)</td>
+        </tr>
+        {% for p in player.get_others_in_group %}
+            {% for r in p.in_all_rounds %}
+                <tr rowspan="" class="highlight-row-on-hover">
+                    <td>{{r.subsession.round_number}}</td>
+                    <td>{{r.own_choice}}</td>
+                    <td>{{r.own_score}}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table></td>
+
+    <td valign="top"><table class="table table-bordered text-center" style="width: auto; margin: auto">
+        <tr>
+            <th rowspan="2"><span class="rotate90">Round</span></th>
+            <th colspan="2"> Person 2 (You) </th>
         </tr>
         <tr class="highlight-row-on-hover">
             <td>Choice</td>
             <td>(R,S)</td>
-            <td>Choice</td>
-            <td>(U,V)</td>
         </tr>
-        {% for p in player_in_all_rounds %}
+        {% for p in player.in_all_rounds %}
             <tr class="highlight-row-on-hover">
                 <td>{{p.subsession.round_number}}</td>
-                <td>{{p.other_choice}}</td>
-                <td>{{p.other_score}}</td>
                 <td>{{p.own_choice}}</td>
                 <td>{{p.own_score}}</td>
             </tr>
         {% endfor %}
-    </table>
+    </table></td>
+
+    </tr>
+</table>
 {% endblock %}

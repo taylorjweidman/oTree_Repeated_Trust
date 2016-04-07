@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 #if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
 
 OTREE_PRODUCTION = 0
-DEBUG = False
+DEBUG = True
     
 ADMIN_USERNAME = 'taylorjweidman'
 ADMIN_PASSWORD = 'none'
@@ -22,7 +22,7 @@ ADMIN_PASSWORD = 'none'
 # don't share this with anybody.
 # Change this to something unique (e.g. mash your keyboard),
 # and then delete this comment.
-SECRET_KEY = 'zzzzzzzzzzzzzzzzzzzzzzzzzzz'
+SECRET_KEY = 'taylorjweidman'
 
 PAGE_FOOTER = ''
 
@@ -89,7 +89,7 @@ mturk_hit_settings = {
     'description': 'Description for your experiment',
     'frame_height': 500,
     'preview_template': 'global/MTurkPreview.html',
-    'minutes_allotted_per_assignment': 60,
+    'minutes_allotted_per_assignment': 120,
     'expiration_hours': 7*24, # 7 days
     #'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',# to prevent retakes
     'qualification_requirements': [
@@ -106,8 +106,8 @@ mturk_hit_settings = {
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.01,
-    'participation_fee': 10.00,
+    'real_world_currency_per_point': 0.25,
+    'participation_fee': 0.00,
     'num_bots': 12,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
