@@ -13,6 +13,7 @@ class Verification(Page):
         return self.subsession.round_number == 1
 
 class Pre_Round_Page(WaitPage):
+    wait_for_all_groups = True
     def after_all_players_arrive(self):
         p1 = self.group.get_player_by_role('Person 1')
         p2 = self.group.get_player_by_role('Person 2')
