@@ -10,7 +10,7 @@ class IRB(Page):
     form_fields = ['IRB_accept']
 
 class Instructions(Page):
-    timeout_seconds = 200
+    pass
 
 page_sequence = [
     IRB,
