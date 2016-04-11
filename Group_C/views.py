@@ -21,12 +21,12 @@ class Pre_Round_Page(WaitPage):
         p2.own_choice = p2.own_score = p2.other_choice = p2.other_score = "Current"
 
         #LIST MODELS
-        #p1.pairing_choice_history = p2.choice_history
-        #p1.pairing_score_history = p2.score_history
-        #p1.pairing_payoff_history = p2.payoff_history
-        #p2.pairing_choice_history = p1.choice_history
-        #p2.pairing_score_history = p1.score_history
-        #p2.pairing_payoff_history = p1.payoff_history
+        p1.pairing_choice_history = p2.choice_history
+        p1.pairing_score_history = p2.score_history
+        p1.pairing_payoff_history = p2.payoff_history
+        p2.pairing_choice_history = p1.choice_history
+        p2.pairing_score_history = p1.score_history
+        p2.pairing_payoff_history = p1.payoff_history
 
 class First_Choice(Page):
     form_model = models.Player
