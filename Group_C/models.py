@@ -106,19 +106,19 @@ class Group(BaseGroup):
         p2.scaled_points = p2.payoff
 
         #LIST MODELS
-        #p1.choice_history = list([str(p.own_choice) for p in p1.in_all_rounds()])
-        #p1.payoff_history = list([int(p.payoff) for p in p1.in_all_rounds()])
-        #p1.score_history = list([str(p.own_score) for p in p1.in_all_rounds()])
+        p1.choice_history = list([str(p.own_choice) for p in p1.in_all_rounds()])
+        p1.payoff_history = list([int(p.payoff) for p in p1.in_all_rounds()])
+        p1.score_history = list([str(p.own_score) for p in p1.in_all_rounds()])
 
-        #p2.choice_history = list([str(p.own_choice) for p in p2.in_all_rounds()])
-        #p2.payoff_history = list([int(p.payoff) for p in p2.in_all_rounds()])
-        #p2.score_history = list([str(p.own_score) for p in p2.in_all_rounds()])
+        p2.choice_history = list([str(p.own_choice) for p in p2.in_all_rounds()])
+        p2.payoff_history = list([int(p.payoff) for p in p2.in_all_rounds()])
+        p2.score_history = list([str(p.own_score) for p in p2.in_all_rounds()])
 
-        #p1.pairing_choice_history = p2.choice_history
-        #p1.pairing_score_history = p2.score_history
+        p1.pairing_choice_history = p2.choice_history
+        p1.pairing_score_history = p2.score_history
 
-        #p2.pairing_choice_history = p1.choice_history
-        #p2.pairing_score_history = p1.score_history
+        p2.pairing_choice_history = p1.choice_history
+        p2.pairing_score_history = p1.score_history
 
 class Player(BasePlayer):
 
@@ -144,12 +144,12 @@ class Player(BasePlayer):
     choice_time = models.IntegerField() #yes = 1?
 
     # LIST MODEL VARIABLES
-    #choice_history = models.CommaSeparatedIntegerField(max_length=3000)
-    #score_history = models.CommaSeparatedIntegerField(max_length=3000)
-    #payoff_history = models.CommaSeparatedIntegerField(max_length=3000)
+    choice_history = models.CommaSeparatedIntegerField(max_length=3000)
+    score_history = models.CommaSeparatedIntegerField(max_length=3000)
+    payoff_history = models.CommaSeparatedIntegerField(max_length=3000)
 
-    #pairing_choice_history = models.CommaSeparatedIntegerField(max_length=3000)
-    #pairing_score_history = models.CommaSeparatedIntegerField(max_length=3000)
+    pairing_choice_history = models.CommaSeparatedIntegerField(max_length=3000)
+    pairing_score_history = models.CommaSeparatedIntegerField(max_length=3000)
 
     #DEFINES ROLE
     def role(self):
