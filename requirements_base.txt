@@ -1,2 +1,2 @@
-otree-core==0.4.34
+otree-core==0.4.47
 Django==1.8.8
