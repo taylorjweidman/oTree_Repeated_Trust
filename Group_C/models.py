@@ -144,12 +144,12 @@ class Player(BasePlayer):
     choice_time = models.IntegerField() #yes = 1?
 
     # LIST MODEL VARIABLES
-    choice_history = models.CommaSeparatedIntegerField(max_length=30)
-    score_history = models.CommaSeparatedIntegerField(max_length=30)
-    payoff_history = models.CommaSeparatedIntegerField(max_length=30)
+    choice_history = models.CommaSeparatedIntegerField(max_length=3000)
+    score_history = models.CommaSeparatedIntegerField(max_length=3000)
+    payoff_history = models.CommaSeparatedIntegerField(max_length=3000)
 
-    pairing_choice_history = models.CommaSeparatedIntegerField(max_length=30)
-    pairing_score_history = models.CommaSeparatedIntegerField(max_length=30)
+    pairing_choice_history = models.CommaSeparatedIntegerField(max_length=3000)
+    pairing_score_history = models.CommaSeparatedIntegerField(max_length=3000)
 
     #DEFINES ROLE
     def role(self):

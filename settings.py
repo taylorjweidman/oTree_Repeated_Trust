@@ -91,12 +91,12 @@ mturk_hit_settings = {
     'preview_template': 'global/MTurkPreview.html',
     'minutes_allotted_per_assignment': 120,
     'expiration_hours': 7*24, # 7 days
-    #'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',# to prevent retakes
+    'grant_qualification_id': '1234567890',# to prevent retakes
     'qualification_requirements': [
         qualification.LocaleRequirement("EqualTo", "US"),
         qualification.PercentAssignmentsApprovedRequirement("GreaterThanOrEqualTo", 50),
         qualification.NumberHitsApprovedRequirement("GreaterThanOrEqualTo", 5),
-        #qualification.Requirement('YOUR_QUALIFICATION_ID_HERE', 'DoesNotExist')
+        qualification.Requirement('YOUR_QUALIFICATION_ID_HERE', 'DoesNotExist')
     ]
 }
 
@@ -141,7 +141,7 @@ SESSION_CONFIGS = [
         'display_name': "Group_C",
         'num_demo_participants': 2,
         'num_participants': 2,
-        'app_sequence': ['Group_C'],
+        'app_sequence': ['IRB_Instructions', 'Group_C'],
     },
     {
         'name': 'Group_D',
