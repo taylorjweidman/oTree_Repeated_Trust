@@ -136,13 +136,13 @@ SESSION_CONFIGS = [
         'num_participants': 2,
         'app_sequence': ['Group_C'],
     },
-    {
-        'name': 'Group_D',
-        'display_name': "Group_D",
-        'num_demo_participants': 2,
-        'num_participants': 2,
-        'app_sequence': ['Group_D'],
-    },
+#    {
+#        'name': 'Group_D',
+#        'display_name': "Group_D",
+#        'num_demo_participants': 2,
+#        'num_participants': 2,
+#        'app_sequence': ['Group_D'],
+#    },
 ]
 
 # don't put anything after this point.
