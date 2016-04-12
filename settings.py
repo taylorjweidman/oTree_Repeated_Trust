@@ -116,6 +116,13 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
+        'name': 'IRB_Instructions',
+        'display_name': "IRB_Instructions",
+        'num_demo_participants': 1,
+        'num_participants': 1,
+        'app_sequence': ['IRB_Instructions'],
+    },
+    {
         'name': 'Group_A',
         'display_name': "Group_A",
         'num_demo_participants': 2,
@@ -136,13 +143,13 @@ SESSION_CONFIGS = [
         'num_participants': 2,
         'app_sequence': ['Group_C'],
     },
-#    {
-#        'name': 'Group_D',
-#        'display_name': "Group_D",
-#        'num_demo_participants': 2,
-#        'num_participants': 2,
-#        'app_sequence': ['Group_D'],
-#    },
+    {
+        'name': 'Group_D',
+        'display_name': "Group_D",
+        'num_demo_participants': 2,
+        'num_participants': 2,
+        'app_sequence': ['Group_D'],
+    },
 ]
 
 # don't put anything after this point.
