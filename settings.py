@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 #if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
 
 OTREE_PRODUCTION = 0
-DEBUG = True
+DEBUG = False
     
 ADMIN_USERNAME = 'taylorjweidman'
 ADMIN_PASSWORD = 'none'
@@ -106,7 +106,7 @@ mturk_hit_settings = {
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.25,
+    'real_world_currency_per_point': 0.15,
     'participation_fee': 0.00,
     'num_bots': 12,
     'doc': "",
