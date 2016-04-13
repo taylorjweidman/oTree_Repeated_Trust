@@ -76,6 +76,11 @@ class Second_Choice(Page):
         if self.timeout_happened:
             self.player.choice_time = 1
 
+class No_Choice(Page):
+    timeout_seconds = 10
+    def is_displayed(self):
+        return self.player.id_in_group == 2 and self.group.group_choice == "R"
+
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
         p1 = self.group.get_player_by_role('Person 1')
@@ -95,6 +100,7 @@ page_sequence = [
     First_Choice,
     WaitForP1,
     Second_Choice,
+    No_Choice,
     ResultsWaitPage,
     Results
 ]

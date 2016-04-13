@@ -88,8 +88,8 @@ class Group(BaseGroup):
         p1.scaled_points = p1.payoff
         p2.scaled_points = p2.payoff - 1
 
-        p1.total_payoff = sum([p.scaled_points for p in p1.in_all_rounds()])
-        p2.total_payoff = sum([p.scaled_points for p in p2.in_all_rounds()])
+        p1.total_payoff = sum([p.payoff for p in p1.in_all_rounds()])
+        p2.total_payoff = sum([p.payoff for p in p2.in_all_rounds()])
 
         p1.total_RU = sum([p.RU for p in p1.in_all_rounds()])
         p1.total_SV = sum([p.SV for p in p1.in_all_rounds()])

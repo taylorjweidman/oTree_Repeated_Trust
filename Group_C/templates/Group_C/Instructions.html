@@ -14,6 +14,12 @@
 <p>
     <img src="https://raw.githubusercontent.com/taylorjweidman/otreetjw/master/Group_C/templates/Group_C/GAME_TREE.png" alt="GAME TREE" width="100%" height="100%" />
 </p>
+<p><b><center>Your role is {{ player.role }}.</center></b></p>
+<p><b><center>
+    {% if player.id_in_group == 2 %}
+        Person 1 chose {{ player.other_choice }}.
+    {% endif %}
+</center></b></p>
 
 </div>
 
