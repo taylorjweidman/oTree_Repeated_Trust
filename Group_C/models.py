@@ -14,7 +14,7 @@ doc = """ Group C """
 class Constants(BaseConstants):
     name_in_url = 'Group_C'
     players_per_group = 2
-    num_rounds = 22
+    num_rounds = 4
     distrust = c(2)
     defect = c(6)
     defected = c(0)
