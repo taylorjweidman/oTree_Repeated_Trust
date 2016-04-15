@@ -12,6 +12,9 @@ class Verification(Page):
     def is_displayed(self):
         return self.subsession.round_number == 1
 
+    def before_next_page(self):
+        self.player.participant.label = self.player.verification
+
 class Pre_Round_Page(WaitPage):
     wait_for_all_groups = True
     def after_all_players_arrive(self):

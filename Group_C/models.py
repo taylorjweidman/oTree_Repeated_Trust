@@ -126,6 +126,7 @@ class Player(BasePlayer):
     own_choice = models.CharField()
     other_choice = models.CharField()
     verification = models.CharField()
+    # own_label = models.CharField()
 
     RU = models.IntegerField()
     SV = models.IntegerField()

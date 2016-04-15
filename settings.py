@@ -141,7 +141,7 @@ SESSION_CONFIGS = [
         'display_name': "Group_C",
         'num_demo_participants': 2,
         'num_participants': 2,
-        'app_sequence': ['IRB_Instructions', 'Group_C'],
+        'app_sequence': ['Group_C'],
     },
     {
         'name': 'Group_D',
