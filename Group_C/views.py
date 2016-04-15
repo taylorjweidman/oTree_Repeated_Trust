@@ -34,7 +34,7 @@ class Pre_Round_Page(WaitPage):
 class First_Choice(Page):
     form_model = models.Player
     form_fields = ['own_choice']
-    timeout_seconds = 50
+    timeout_seconds = 60
 
     def is_displayed(self):
         return self.player.id_in_group == 1
@@ -62,7 +62,7 @@ class WaitForP1(WaitPage):
 class Second_Choice(Page):
     form_model = models.Player
     form_fields = ['own_choice']
-    timeout_seconds = 50
+    timeout_seconds = 60
 
     def is_displayed(self):
         return self.player.id_in_group == 2 and self.group.group_choice == "S"
@@ -80,7 +80,7 @@ class Second_Choice(Page):
             self.player.choice_time = 1
 
 class No_Choice(Page):
-    timeout_seconds = 10
+    timeout_seconds = 15
     def is_displayed(self):
         return self.player.id_in_group == 2 and self.group.group_choice == "R"
 
@@ -91,7 +91,7 @@ class ResultsWaitPage(WaitPage):
         self.group.set_variables()
 
 class Results(Page):
-    timeout_seconds = 30
+    timeout_seconds = 40
 
 class ResultsSummary(Page):
     def is_displayed(self):
