@@ -54,10 +54,9 @@ class First_Choice(Page):
 class WaitForP1(WaitPage):
     def after_all_players_arrive(self):
         p1 = self.group.get_player_by_role('Person 1')
-	p2 = self.group.get_player_by_role('Person 2')
+        p2 = self.group.get_player_by_role('Person 2')
+        p2.other_choice = p1.own_choice
         self.group.group_choice = p1.own_choice
-	p2.other_choice = p1.own_choice
-#	self.group.set_pre_variables()
 
 class Second_Choice(Page):
     form_model = models.Player
@@ -98,7 +97,7 @@ class ResultsSummary(Page):
         return self.subsession.round_number == Constants.num_rounds
 
 page_sequence = [
-    Verification,
+#    Verification,
     Pre_Round_Page,
     First_Choice,
     WaitForP1,

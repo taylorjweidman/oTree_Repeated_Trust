@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 #if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
 
 OTREE_PRODUCTION = 0
-DEBUG = False
+DEBUG = True
     
 ADMIN_USERNAME = 'taylorjweidman'
 ADMIN_PASSWORD = 'none'
@@ -121,6 +121,13 @@ SESSION_CONFIGS = [
         'num_demo_participants': 1,
         'num_participants': 1,
         'app_sequence': ['IRB_Instructions'],
+    },
+    {
+        'name': 'stag_hunt',
+        'display_name': "stag_hunt",
+        'num_demo_participants': 2,
+        'num_participants': 2,
+        'app_sequence': ['stag_hunt'],
     },
     {
         'name': 'Group_A',
