@@ -97,7 +97,7 @@ class ResultsSummary(Page):
         return self.subsession.round_number == Constants.num_rounds
 
 page_sequence = [
-#    Verification,
+    Verification,
     Pre_Round_Page,
     First_Choice,
     WaitForP1,

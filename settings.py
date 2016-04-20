@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 #if environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
 
 OTREE_PRODUCTION = 0
-DEBUG = True
+DEBUG = False
     
 ADMIN_USERNAME = 'taylorjweidman'
 ADMIN_PASSWORD = 'none'

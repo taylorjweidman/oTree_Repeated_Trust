@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c047c5f0-6bf1-4301-a403-6a41abbd360c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/_builtin/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/templates/stag_hunt/Feedback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/templates/stag_hunt/Instructions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/templates/stag_hunt/Introduction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/templates/stag_hunt/Question.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/templates/stag_hunt/Results.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/templates/stag_hunt/Scenario_1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stag_hunt/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Group_C/models.py" afterPath="$PROJECT_DIR$/Group_C/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Group_C/views.py" afterPath="$PROJECT_DIR$/Group_C/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
     </list>
     <ignored path="otreetjw.iws" />
@@ -38,21 +24,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Group_C/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
+            <state relative-caret-position="193">
               <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Group_C/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="103" column="18" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
+            <state relative-caret-position="176">
+              <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -66,8 +64,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Group_C/views.py" />
         <option value="$PROJECT_DIR$/Group_C/models.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/Group_C/views.py" />
       </list>
     </option>
   </component>
@@ -178,7 +177,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="1912" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10735826" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -216,18 +215,28 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Group_C/views.py">
+    <entry file="file://$PROJECT_DIR$/Group_C/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="103" column="18" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
+        <state relative-caret-position="193">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Group_C/models.py">
+    <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Group_C/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
           <folding />
         </state>
       </provider>
